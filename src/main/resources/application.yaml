@@ -2,13 +2,13 @@ spring:
   application:
     name: RealTimeDocCollab
   datasource:
-    url: jdbc:postgresql://localhost:5432/RealTimeDocCollab
-    username: postgres
-    password: 076493
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 jwt:
-  secret: V6fTF1MzMy9RZTvoV7x7VoVGLXmgtVXHUdMOAHyn6Wg=
+  secret: ${JWT_SECRET}
