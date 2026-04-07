@@ -153,8 +153,14 @@ public class DocumentService {
             throw new AccessDeniedException("You don't have permission to edit this document!");
         }
 
-        document.setTitle(request.title());
-        document.setContent(request.content());
+        String previousContent = document.getContent();
+
+        if (request.title() != null) {
+            document.setTitle(request.title());
+        }
+        if (request.content() != null) {
+            document.setContent(request.content());
+        }
 
         DocumentEdit editEntry = DocumentEdit.builder()
                 .document(document)

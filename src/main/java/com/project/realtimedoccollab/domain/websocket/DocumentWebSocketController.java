@@ -1,11 +1,7 @@
 package com.project.realtimedoccollab.domain.websocket;
 
-import com.project.realtimedoccollab.domain.collaborator.DocumentCollaboratorRepository;
-import com.project.realtimedoccollab.domain.document.DocumentRepository;
 import com.project.realtimedoccollab.domain.document.DocumentService;
 import com.project.realtimedoccollab.domain.dto.websocket.*;
-import com.project.realtimedoccollab.notification.NotificationService;
-import com.project.realtimedoccollab.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -24,10 +20,6 @@ public class DocumentWebSocketController {
 
     private final DocumentService documentService;
     private final SimpMessagingTemplate messagingTemplate;
-    private final NotificationService notificationService;
-    private final UserRepository userRepository;
-    private final DocumentRepository documentRepository;
-    private final DocumentCollaboratorRepository documentCollaboratorRepository;
 
     @MessageMapping("/document.join")
     public void handleJoin(
